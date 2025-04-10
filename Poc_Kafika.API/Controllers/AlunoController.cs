@@ -14,10 +14,10 @@ namespace Poc_Kafika.API.Controllers;
 [ApiController]
 public class AlunoController : ControllerBase
 {
-    private readonly IMediator _mediator;
-    public AlunoController(IMediator mediator)
+    private readonly ISender _sender;
+    public AlunoController(ISender sender)
     {
-        _mediator = mediator;
+        _sender = sender;
     }
 
     [HttpPost]
@@ -25,7 +25,7 @@ public class AlunoController : ControllerBase
     {
         var command = CreateAlunoCommand.Create(request.Nome, request.Disciplina, request.Nota);
 
-        var result = await _mediator.Send(command, cancellationToken);
+        var result = await _sender.Send(command, cancellationToken);
         if (result is null)
             return BadRequest("Erro ao Criar o Aluno!");
 
@@ -40,7 +40,7 @@ public class AlunoController : ControllerBase
     {
         var command = DeleteAlunoCommand.Create(id);
 
-        var result = await _mediator.Send(command, cancellationToken);
+        var result = await _sender.Send(command, cancellationToken);
         if (result is null)
             return BadRequest("Erro ao Excluir o Aluno!");
 
@@ -52,7 +52,7 @@ public class AlunoController : ControllerBase
     {
         var command = UpdateAlunoCommand.Create(id, request.Nome, request.Disciplina, request.Nota);
 
-        var result = await _mediator.Send(command, cancellationToken);
+        var result = await _sender.Send(command, cancellationToken);
         if (result is null)
             return BadRequest("Erro ao Atualizar o Aluno!");
 
@@ -66,7 +66,7 @@ public class AlunoController : ControllerBase
     {
         var command = GetAlunoCommand.Create(id);
 
-        var result = await _mediator.Send(command, cancellationToken);
+        var result = await _sender.Send(command, cancellationToken);
         if (result is null)
             return BadRequest("Erro ao Obter o Aluno!");
 

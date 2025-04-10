@@ -20,7 +20,7 @@ public class ProducerService : IProducerService
         {
             BootstrapServers = _kafkaConfiguration.Server
         };
-        
+
     }
 
     public async Task<string> SendMessageAsync(string message, CancellationToken cancellationToken)
