@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Poc_Kafka.Application\Poc_Kafka.Application.csproj" />
+    <ProjectReference Include="..\Poc_Kafka.Domain\Poc_Kafka.Domain.csproj" />
+    <ProjectReference Include="..\Poc_Kafka.Producer\Poc_Kafka.Producer.csproj" />
+  </ItemGroup>
+
+</Project>

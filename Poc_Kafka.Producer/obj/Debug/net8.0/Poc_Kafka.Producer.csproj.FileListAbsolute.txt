@@ -1,0 +1,15 @@
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Producer\bin\Debug\net8.0\Poc_Kafka.Producer.deps.json
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Producer\bin\Debug\net8.0\Poc_Kafka.Producer.dll
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Producer\bin\Debug\net8.0\Poc_Kafka.Producer.pdb
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Producer\bin\Debug\net8.0\Poc_Kafka.Domain.dll
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Producer\bin\Debug\net8.0\Poc_Kafka.Domain.pdb
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Producer\obj\Debug\net8.0\Poc_Kafka.Producer.csproj.AssemblyReference.cache
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Producer\obj\Debug\net8.0\Poc_Kafka.Producer.GeneratedMSBuildEditorConfig.editorconfig
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Producer\obj\Debug\net8.0\Poc_Kafka.Producer.AssemblyInfoInputs.cache
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Producer\obj\Debug\net8.0\Poc_Kafka.Producer.AssemblyInfo.cs
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Producer\obj\Debug\net8.0\Poc_Kafka.Producer.csproj.CoreCompileInputs.cache
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Producer\obj\Debug\net8.0\Poc_Kafk.9C0CACDA.Up2Date
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Producer\obj\Debug\net8.0\Poc_Kafka.Producer.dll
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Producer\obj\Debug\net8.0\refint\Poc_Kafka.Producer.dll
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Producer\obj\Debug\net8.0\Poc_Kafka.Producer.pdb
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Producer\obj\Debug\net8.0\ref\Poc_Kafka.Producer.dll

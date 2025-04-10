@@ -1,0 +1,12 @@
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Domain\bin\Debug\net8.0\Poc_Kafka.Domain.deps.json
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Domain\bin\Debug\net8.0\Poc_Kafka.Domain.dll
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Domain\bin\Debug\net8.0\Poc_Kafka.Domain.pdb
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Domain\obj\Debug\net8.0\Poc_Kafka.Domain.csproj.AssemblyReference.cache
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Domain\obj\Debug\net8.0\Poc_Kafka.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Domain\obj\Debug\net8.0\Poc_Kafka.Domain.AssemblyInfoInputs.cache
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Domain\obj\Debug\net8.0\Poc_Kafka.Domain.AssemblyInfo.cs
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Domain\obj\Debug\net8.0\Poc_Kafka.Domain.csproj.CoreCompileInputs.cache
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Domain\obj\Debug\net8.0\Poc_Kafka.Domain.dll
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Domain\obj\Debug\net8.0\refint\Poc_Kafka.Domain.dll
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Domain\obj\Debug\net8.0\Poc_Kafka.Domain.pdb
+C:\POCS\TREINAMENTO\Poc_Kafka\Poc_Kafka.Domain\obj\Debug\net8.0\ref\Poc_Kafka.Domain.dll

@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "b74HBJNzqwQTeizTw6I8KYkvSK6Gz0+xbG79KuEt+xo=",
+  "Source": "Poc_Kafika.API",
+  "BasePath": "_content/Poc_Kafika.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
