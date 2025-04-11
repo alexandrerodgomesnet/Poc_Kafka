@@ -1,15 +1,18 @@
 ﻿using System.Text.Json;
+using Microsoft.Extensions.Logging;
 using Poc_Kafka.Application.Abstractions.Messaging.Command;
+using Poc_Kafka.Application.Aluno.Delete;
 using Poc_Kafka.Domain.Repositories;
-using Poc_Kafka.Domain.Services.Interfaces;
+using Poc_Kafka.Domain.Services;
 
 namespace Poc_Kafka.Application.Aluno.Update;
 
-public class UpdateAlunoHandler(IProducerService producer, IAlunoRepository alunoRepository)
-    : ICommandHandler<UpdateAlunoCommand, UpdateAlunoResult>
+public class UpdateAlunoHandler(IAlunoRepository alunoRepository, IProducerService service,
+    ILogger<UpdateAlunoHandler> logger) : ICommandHandler<UpdateAlunoCommand, UpdateAlunoResult>
 {
-    private readonly IProducerService _producer = producer;
     private readonly IAlunoRepository _alunoRepository = alunoRepository;
+    private readonly IProducerService _service = service;
+    private readonly ILogger<UpdateAlunoHandler> _logger = logger;
     public async Task<UpdateAlunoResult> Handle(UpdateAlunoCommand command, CancellationToken cancellationToken)
     {
         try
@@ -20,7 +23,9 @@ public class UpdateAlunoHandler(IProducerService producer, IAlunoRepository alun
 
             var message = JsonSerializer.Serialize(response);
 
-            await _producer.SendMessageAsync(message, cancellationToken);
+            var resultMessage = await _service.SendMessageAsync(message, cancellationToken);
+
+            _logger.LogInformation($"Aluno Atualizado: {resultMessage}");
 
             return UpdateAlunoResult.Create(response.Id, response.Nome, response.Disciplina, response.Nota);
         }

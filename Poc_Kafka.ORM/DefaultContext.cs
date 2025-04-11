@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Reflection;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
 using Poc_Kafka.Domain.Entities;
 
 namespace Poc_Kafka.ORM
@@ -22,6 +19,27 @@ namespace Poc_Kafka.ORM
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             base.OnModelCreating(modelBuilder);
+        }
+    }
+
+    public class YourDbContextFactory : IDesignTimeDbContextFactory<DefaultContext>
+    {
+        public DefaultContext CreateDbContext(string[] args)
+        {
+            IConfigurationRoot configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            var builder = new DbContextOptionsBuilder<DefaultContext>();
+            var connectionString = configuration.GetConnectionString("DefaultConnection");
+
+            builder.UseNpgsql(
+                connectionString,
+                b => b.MigrationsAssembly("Poc_Kafka.ORM")
+            );
+
+            return new DefaultContext(builder.Options);
         }
     }
 }

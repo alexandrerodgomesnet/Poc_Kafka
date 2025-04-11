@@ -1,4 +1,4 @@
-﻿namespace Poc_Kafka.Domain.Services.Interfaces;
+﻿namespace Poc_Kafka.Producer.API.Services.Interfaces;
 
 public interface IProducerService
 {

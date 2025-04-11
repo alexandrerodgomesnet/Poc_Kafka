@@ -16,4 +16,10 @@
     <ProjectReference Include="..\Poc_Kafka.Domain\Poc_Kafka.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

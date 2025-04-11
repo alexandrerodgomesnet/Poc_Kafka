@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poc_Kafka.Application", "Po
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poc_Kafka.ORM", "Poc_Kafka.ORM\Poc_Kafka.ORM.csproj", "{8E8A482A-C11E-43A6-82E0-CD70818784E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poc_Kafka.Producer", "Poc_Kafka.Producer\Poc_Kafka.Producer.csproj", "{60663170-A3C8-4800-8CD9-707A46D80D9D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poc_Kafka.Producer.API", "Poc_Kafka.Producer.API\Poc_Kafka.Producer.API.csproj", "{AF52B9C1-0CA1-42C1-BA12-73413D8EC48E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{8E8A482A-C11E-43A6-82E0-CD70818784E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E8A482A-C11E-43A6-82E0-CD70818784E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E8A482A-C11E-43A6-82E0-CD70818784E7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{60663170-A3C8-4800-8CD9-707A46D80D9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{60663170-A3C8-4800-8CD9-707A46D80D9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{60663170-A3C8-4800-8CD9-707A46D80D9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{60663170-A3C8-4800-8CD9-707A46D80D9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF52B9C1-0CA1-42C1-BA12-73413D8EC48E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF52B9C1-0CA1-42C1-BA12-73413D8EC48E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF52B9C1-0CA1-42C1-BA12-73413D8EC48E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF52B9C1-0CA1-42C1-BA12-73413D8EC48E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

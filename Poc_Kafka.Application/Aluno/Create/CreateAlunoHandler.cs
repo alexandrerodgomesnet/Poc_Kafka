@@ -1,15 +1,17 @@
 ﻿using System.Text.Json;
+using Microsoft.Extensions.Logging;
 using Poc_Kafka.Application.Abstractions.Messaging.Command;
 using Poc_Kafka.Domain.Repositories;
-using Poc_Kafka.Domain.Services.Interfaces;
+using Poc_Kafka.Domain.Services;
 
 namespace Poc_Kafka.Application.Aluno.Create
 {
-    public class CreateAlunoHandler(IAlunoRepository alunoRepository, IProducerService producer) 
-        : ICommandHandler<CreateAlunoCommand, CreateAlunoResult>
+    public class CreateAlunoHandler(IAlunoRepository alunoRepository, IProducerService service,
+        ILogger<CreateAlunoHandler> logger) : ICommandHandler<CreateAlunoCommand, CreateAlunoResult>
     {
-        private readonly IProducerService _producer = producer;
         private readonly IAlunoRepository _alunoRepository = alunoRepository;
+        private readonly IProducerService _service = service;
+        private readonly ILogger<CreateAlunoHandler> _logger = logger;
 
         public async Task<CreateAlunoResult> Handle(CreateAlunoCommand command, CancellationToken cancellationToken)
         {
@@ -21,7 +23,9 @@ namespace Poc_Kafka.Application.Aluno.Create
 
                 var message = JsonSerializer.Serialize(response);
 
-                await _producer.SendMessageAsync(message, cancellationToken);
+                var resultMessage = await _service.SendMessageAsync(message, cancellationToken);
+
+                _logger.LogInformation($"Aluno criado: {resultMessage}");
 
                 return CreateAlunoResult.Create(response.Id, response.Nome, response.Disciplina, response.Nota);
             }

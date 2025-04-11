@@ -1,11 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Poc_Kafika.API.Middleware;
 using Poc_Kafka.Application;
+using Poc_Kafka.Application.Services;
 using Poc_Kafka.Domain.Repositories;
-using Poc_Kafka.Domain.Services;
-using Poc_Kafka.Domain.Services.Interfaces;
 using Poc_Kafka.ORM;
 using Poc_Kafka.ORM.Repositories;
-using Poc_Kafka.Producer;
 
 namespace Poc_Kafka.Domain.Extensions;
 
@@ -13,13 +12,6 @@ public static class ServicesExtensions
 {
     public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddScoped<IProducerService, ProducerService>();
-
-        services
-            .AddScoped<KafkaConfiguration>()
-            .Configure<KafkaConfiguration>(a => configuration.GetSection(nameof(KafkaConfiguration))
-            .Bind(a));
-
         services.AddMediatR(cfg =>
         {
             cfg.RegisterServicesFromAssemblies(
@@ -27,7 +19,14 @@ public static class ServicesExtensions
                 typeof(DomainLayer).Assembly,
                 typeof(Program).Assembly
             );
-        });        
+        });
+
+        services.AddHttpClient<ProducerService>(client =>
+        {
+            client.BaseAddress = new Uri("https://localhost:7250");
+        })
+        .SetHandlerLifetime(TimeSpan.FromMinutes(3))
+        .AddHttpMessageHandler<CircuitBreakerHandlerMiddleware>();
 
         return services;
     }

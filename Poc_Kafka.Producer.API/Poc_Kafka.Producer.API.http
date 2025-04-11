@@ -1,0 +1,6 @@
+@Poc_Kafka.Producer.API_HostAddress = http://localhost:5227
+
+GET {{Poc_Kafka.Producer.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

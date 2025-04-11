@@ -1,8 +1,7 @@
-﻿using System.Text.Json;
-using Confluent.Kafka;
+﻿using Confluent.Kafka;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Poc_Kafka.Domain.Services;
+using Poc_Kafka.Consumer.Configurations;
 
 namespace Poc_Kafka.Consumer
 {
@@ -12,10 +11,11 @@ namespace Poc_Kafka.Consumer
         private readonly ILogger<ConsumerService> _logger;
         private readonly KafkaConfiguration _configuration;
 
-        public ConsumerService(ILogger<ConsumerService> logger, KafkaConfiguration configuration)
+        public ConsumerService(ILogger<ConsumerService> logger)
+        //public ConsumerService(ILogger<ConsumerService> logger, KafkaConfiguration configuration)
         {            
             _logger = logger;
-            _configuration = configuration;
+            _configuration = new KafkaConfiguration();
 
             _consumer = new ConsumerBuilder<Ignore, string>(new ConsumerConfig
             {

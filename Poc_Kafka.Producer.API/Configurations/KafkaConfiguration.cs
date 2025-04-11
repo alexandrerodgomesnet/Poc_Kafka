@@ -1,4 +1,4 @@
-﻿namespace Poc_Kafka.Domain.Services;
+﻿namespace Poc_Kafka.Producer.API.Configurations;
 
 public class KafkaConfiguration
 {

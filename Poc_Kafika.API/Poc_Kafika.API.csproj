@@ -7,9 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.4">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Polly" Version="8.5.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Poc_Kafka.Application\Poc_Kafka.Application.csproj" />
     <ProjectReference Include="..\Poc_Kafka.Domain\Poc_Kafka.Domain.csproj" />
-    <ProjectReference Include="..\Poc_Kafka.Producer\Poc_Kafka.Producer.csproj" />
+    <ProjectReference Include="..\Poc_Kafka.ORM\Poc_Kafka.ORM.csproj" />
   </ItemGroup>
 
 </Project>

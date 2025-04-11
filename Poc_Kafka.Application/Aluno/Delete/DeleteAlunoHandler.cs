@@ -1,14 +1,17 @@
-﻿using Poc_Kafka.Application.Abstractions.Messaging.Command;
+﻿using Microsoft.Extensions.Logging;
+using Poc_Kafka.Application.Abstractions.Messaging.Command;
+using Poc_Kafka.Application.Aluno.Create;
 using Poc_Kafka.Domain.Repositories;
-using Poc_Kafka.Domain.Services.Interfaces;
+using Poc_Kafka.Domain.Services;
 
 namespace Poc_Kafka.Application.Aluno.Delete;
 
-public class DeleteAlunoHandler(IProducerService producer, IAlunoRepository alunoRepository) 
-    : ICommandHandler<DeleteAlunoCommand, DeleteAlunoResult>
+public class DeleteAlunoHandler(IAlunoRepository alunoRepository, IProducerService service,
+    ILogger<DeleteAlunoHandler> logger) : ICommandHandler<DeleteAlunoCommand, DeleteAlunoResult>
 {
-    private readonly IProducerService _producer = producer;
     private readonly IAlunoRepository _alunoRepository = alunoRepository;
+    private readonly IProducerService _service = service;
+    private readonly ILogger<DeleteAlunoHandler> _logger = logger;
 
     public async Task<DeleteAlunoResult> Handle(DeleteAlunoCommand command, CancellationToken cancellationToken)
     {
@@ -19,7 +22,9 @@ public class DeleteAlunoHandler(IProducerService producer, IAlunoRepository alun
             {
                 var message = $"Aluno com Id: {command.Id} excluido com sucesso!";
 
-                await _producer.SendMessageAsync(message, cancellationToken);
+                var resultMessage = await _service.SendMessageAsync(message, cancellationToken);
+
+                _logger.LogInformation($"Aluno deletado: {resultMessage}");
             }
 
             return DeleteAlunoResult.Create(response);
